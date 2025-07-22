@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Spyder - Gostwyck</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-text">
+                    <h1><a href="index.html" style="text-decoration: none; color: inherit;">GOSTWYCK</a></h1>
+                </div>
+                <img src="assets/shield-simple.png" alt="Gostwyck" class="logo-shield-img">
+            </div>
+            
+            <div class="menu-toggle">&#9776;</div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#models">Models</a></li>
+                    <li><a href="index.html#heritage">Heritage</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="model-hero">
+        <div class="model-hero-image" style="background-image: url('assets/gostwyck_spyder_onroad.png');"></div>
+        <div class="model-hero-content">
+            <div class="container">
+                <h1 class="model-title">The <span class="accent">Spyder</span></h1>
+                <p class="model-subtitle">Pure electric roadster with 1960s soul</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="model-page">
+        <div class="container">
+            <section class="model-description">
+                <div class="description-content">
+                    <h2>Open-Top Electric Excellence</h2>
+                    <p>The Gostwyck Spyder represents the perfect fusion of classic British roadster styling with cutting-edge electric propulsion. Born from a passion project during the 2020 lockdown, this unique vehicle combines the timeless elegance of 1960s sports cars with modern electric performance and safety.</p>
+                    <p>Built on a BMW Z3 chassis and clothed in a meticulously crafted fibreglass body, the Spyder offers an authentic vintage driving experience without the emissions. Every component has been carefully selected and integrated to create a truly unique electric roadster that turns heads wherever it goes.</p>
+                    <p>This is more than just a conversion – it's a complete reimagining of what an electric sports car can be.</p>
+                </div>
+                <div class="description-image">
+                    <img src="assets/gostwyck-spyder.png" alt="Gostwyck Spyder" class="model-detail-img">
+                </div>
+            </section>
+
+            <section class="model-specs">
+                <h2>Specifications</h2>
+                <div class="specs-grid">
+                    <div class="spec-group">
+                        <h3>Performance</h3>
+                        <ul>
+                            <li><strong>Range:</strong> ~120 miles</li>
+                            <li><strong>Top Speed:</strong> 85 mph</li>
+                            <li><strong>0-60 mph:</strong> ~8 seconds</li>
+                            <li><strong>Power:</strong> 50kW continuous</li>
+                            <li><strong>Charging:</strong> Type 2 AC</li>
+                        </ul>
+                    </div>
+                    <div class="spec-group">
+                        <h3>Construction</h3>
+                        <ul>
+                            <li><strong>Base:</strong> BMW Z3 chassis</li>
+                            <li><strong>Body:</strong> Tribute Automotive Z300S kit</li>
+                            <li><strong>Weight:</strong> ~1,200kg</li>
+                            <li><strong>Drivetrain:</strong> Rear-wheel drive</li>
+                            <li><strong>Suspension:</strong> BMW Z3 (modified)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="model-components">
+                <h2>Key Components</h2>
+                <div class="components-grid">
+                    <div class="component-item">
+                        <h3>Electric Motor</h3>
+                        <p><strong>Source:</strong> Mitsubishi Outlander PHEV</p>
+                        <p>Rear-mounted AC motor providing smooth, silent propulsion with instant torque delivery characteristic of electric vehicles.</p>
+                    </div>
+                    <div class="component-item">
+                        <h3>Battery Pack</h3>
+                        <p><strong>Source:</strong> BMW hybrid modules</p>
+                        <p>Lithium-ion battery pack configured for optimal weight distribution and range. Positioned low in the chassis for excellent handling dynamics.</p>
+                    </div>
+                    <div class="component-item">
+                        <h3>Inverter</h3>
+                        <p><strong>Source:</strong> Toyota Prius</p>
+                        <p>Controls the electric motor with precision, managed by open-source software for maximum flexibility and performance tuning.</p>
+                    </div>
+                    <div class="component-item">
+                        <h3>Auxiliary Systems</h3>
+                        <p><strong>Brake Booster:</strong> Audi electric pump</p>
+                        <p><strong>Power Steering:</strong> Vauxhall Zafira pump</p>
+                        <p>Carefully selected components ensure all modern conveniences are retained in the classic package.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="model-story">
+                <h2>The Build Story</h2>
+                <p>The Spyder project began in 2020 as a family lockdown project and evolved into a comprehensive 4-year build. Starting with an MOT-failed BMW Z3 purchased for £800, the car required extensive bodywork before the electric conversion could begin.</p>
+                <p>The transformation involved removing the entire ICE drivetrain and replacing it with a carefully orchestrated collection of electric components from various manufacturers. The result is a truly unique vehicle that combines the best of classic automotive design with modern electric propulsion.</p>
+                <div class="story-footer">
+                    <a href="true-story.html" class="btn">Read the Full Story</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2025 Gostwyck. Crafting electric dreams with vintage soul.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

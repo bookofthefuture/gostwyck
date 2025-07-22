@@ -1,13 +1,5 @@
-/* Gostwyck Motors - 1950s/1960s Inspired Styling */
-
-:root {
-    --primary-color: #2c5530;
-    --accent-color: #d4af37;
-    --cream: #f8f5f0;
-    --charcoal: #2a2a2a;
-    --red: #8b0000;
-    --chrome: #c0c0c0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Biome:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -16,315 +8,640 @@
 }
 
 body {
-    font-family: 'Lora', serif;
+    font-family: 'Roboto Serif', serif;
+    background-color: #ffffff;
+    color: #000000;
     line-height: 1.6;
-    color: var(--charcoal);
-    background-color: var(--cream);
-}
-
-/* Typography */
-h1, h2, h3 {
-    font-family: 'Bebas Neue', cursive;
-    letter-spacing: 1px;
 }
 
 .container {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
-/* Header & Navigation */
-.hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--charcoal) 100%);
-    color: var(--cream);
-    min-height: 100vh;
-    position: relative;
+/* Header */
+header {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
 }
 
-.navbar {
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    position: relative;
-    z-index: 10;
 }
 
-.logo h1 {
-    font-size: 2.5rem;
-    color: var(--accent-color);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.logo .tagline {
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    color: var(--cream);
-    display: block;
-    margin-top: -5px;
+.logo-shield-img {
+    height: 50px;
+    width: auto;
 }
 
-.nav-links {
+.logo-text h1 {
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
+    font-size: 3rem;
+    margin: 0;
+    line-height: 1;
+    color: #000;
+}
+
+nav ul {
     display: flex;
     list-style: none;
-    gap: 30px;
 }
 
-.nav-links a {
-    color: var(--cream);
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
+    color: #000000;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--accent-color);
+nav ul li a:hover {
+    color: #ff0000;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 /* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    background-image: url('assets/gostwyck_spyder_onroad.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
 .hero-content {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    max-width: 600px;
+    padding: 40px;
+}
+
+.hero-content h2 {
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ff0000;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #d60000;
+}
+
+/* Models Section */
+.models {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
     text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+}
+
+.models-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.model-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.model-card:hover {
+    transform: translateY(-10px);
+}
+
+.model-img {
+    height: 250px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.spyder-img {
+    background-image: url('assets/gostwyck-spyder.png');
+}
+
+.gt-img {
+    background-image: url('assets/gostwyck_gt.png');
+    position: relative;
+}
+
+.gt-img::after {
+    content: 'COMING SOON';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
-}
-
-.hero-title {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    color: var(--cream);
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
-}
-
-.hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: var(--accent-color);
-    font-style: italic;
-}
-
-.cta-button {
-    background: var(--accent-color);
-    color: var(--charcoal);
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid var(--accent-color);
-}
-
-.cta-button:hover {
-    background: transparent;
-    color: var(--accent-color);
-    border-color: var(--accent-color);
-}
-
-/* Sections */
-section {
-    padding: 80px 0;
-}
-
-.about-section {
-    background: var(--cream);
-}
-
-.models-section {
-    background: #f0f0f0;
-}
-
-.technology-section {
-    background: var(--charcoal);
-    color: var(--cream);
-}
-
-.contact-section {
-    background: var(--primary-color);
-    color: var(--cream);
-}
-
-/* Section Headings */
-section h2 {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 50px;
-    color: var(--charcoal);
-}
-
-.technology-section h2,
-.contact-section h2 {
-    color: var(--cream);
-}
-
-/* About Section */
-.about-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.about-text p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    line-height: 1.8;
-}
-
-.placeholder-image {
-    background: var(--chrome);
-    color: var(--charcoal);
-    padding: 60px 20px;
-    text-align: center;
-    font-weight: 600;
-    border: 3px solid var(--accent-color);
-    font-style: italic;
-}
-
-/* Models Section */
-.model-showcase {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.model-details h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
-
-.model-details p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    color: var(--charcoal);
-}
-
-.specs {
-    list-style: none;
-}
-
-.specs li {
-    padding: 8px 0;
-    border-bottom: 1px solid #ddd;
-    color: var(--charcoal);
-}
-
-.specs li:before {
-    content: "→ ";
-    color: var(--accent-color);
+    background-color: rgba(255, 0, 0, 0.9);
+    color: white;
+    padding: 10px 20px;
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
     font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Technology Section */
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.model-info {
+    padding: 25px;
+}
+
+.model-info h3 {
+    font-family: 'Biome', 'Arial Black', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.model-info p {
+    margin-bottom: 20px;
+}
+
+.accent {
+    color: #0070c0;
+}
+
+/* Heritage Section */
+.heritage {
+    padding: 80px 0;
+    background-color: #f8f8f8;
+}
+
+.heritage-content {
+    display: flex;
+    align-items: center;
     gap: 40px;
 }
 
-.tech-item {
-    text-align: center;
-    padding: 30px 20px;
+.heritage-text {
+    flex: 1;
 }
 
-.tech-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: var(--accent-color);
+.heritage-text h2 {
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-.tech-item p {
-    line-height: 1.8;
-}
-
-/* Contact Section */
-.contact-section {
-    text-align: center;
-}
-
-.contact-section p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-}
-
-.contact-info p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    color: var(--accent-color);
+.heritage-image {
+    flex: 1;
+    height: 400px;
+    background-image: url('assets/gostwyck_gt_2.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
 }
 
 /* Footer */
 footer {
-    background: var(--charcoal);
-    color: var(--cream);
-    text-align: center;
-    padding: 30px 0;
+    padding: 50px 0;
+    background-color: #000000;
+    color: #ffffff;
 }
 
-/* Responsive Design */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.footer-column h3 {
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #ff0000;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+.copyright {
+    margin-top: 40px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Additional logo styling can be added here as needed */
+
+/* Link styling in headings */
+h2 a {
+    text-decoration: none;
+    color: #0099ff;
+}
+
+h2 a:hover {
+    text-decoration: underline;
+    color: #0077cc;
+}
+
+/* Accent Colors */
+.accent-red {
+    color: #ff0000;
+}
+
+.accent {
+    color: #0099ff;
+}
+
+/* Story Page Styling */
+.story-page {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.story-title {
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+.story-section {
+    margin-bottom: 40px;
+}
+
+.story-section h2 {
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #000;
+    border-bottom: 2px solid #0099ff;
+    padding-bottom: 10px;
+}
+
+.story-section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.story-footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+}
+
+/* Model Page Styling */
+.model-hero {
+    height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.model-hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.model-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+}
+
+.model-hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.model-title {
+    font-family: 'Biome', 'Arial Black', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.model-subtitle {
+    font-size: 1.3rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+.coming-soon-badge {
+    display: inline-block;
+    background-color: rgba(255, 0, 0, 0.9);
+    color: white;
+    padding: 8px 16px;
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.model-page {
+    padding: 80px 0;
+}
+
+.model-description {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.description-content h2 {
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.description-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.model-detail-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.model-specs {
+    margin-bottom: 80px;
+}
+
+.model-specs h2 {
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.spec-group h3 {
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #0099ff;
+    border-bottom: 2px solid #0099ff;
+    padding-bottom: 10px;
+}
+
+.spec-group ul {
+    list-style: none;
+}
+
+.spec-group ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.model-components {
+    margin-bottom: 80px;
+}
+
+.model-components h2 {
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+.components-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.component-item {
+    background: #f8f8f8;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid #0099ff;
+}
+
+.component-item h3 {
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.component-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.model-story {
+    background: #f8f8f8;
+    padding: 50px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.model-story h2 {
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.model-story p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.development-timeline {
+    margin: 30px 0;
+}
+
+.development-timeline h3 {
+    font-family: 'Aharoni', 'Arial Black', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #0099ff;
+}
+
+.development-timeline ul {
+    list-style: none;
+}
+
+.development-timeline ul li {
+    padding: 8px 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .navbar {
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
         flex-direction: column;
-        gap: 20px;
+        padding: 20px;
+        border-bottom: 1px solid #eee;
+        z-index: 100;
     }
     
-    .nav-links {
-        gap: 20px;
+    nav ul.active {
+        display: flex;
     }
     
-    .hero-title {
-        font-size: 2.5rem;
+    nav ul li {
+        margin: 10px 0;
     }
     
-    .about-content,
-    .model-showcase {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .tech-grid {
+    .models-grid {
         grid-template-columns: 1fr;
     }
     
-    section h2 {
+    .heritage-content {
+        flex-direction: column;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-content h2 {
         font-size: 2rem;
     }
-}
-
-/* Vintage Chrome Effect */
-.chrome-text {
-    background: linear-gradient(to bottom, #eee 0%, #999 50%, #777 51%, #555 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
-}
-
-/* Classic Car Accent Lines */
-.accent-line {
-    width: 100px;
-    height: 3px;
-    background: var(--accent-color);
-    margin: 20px auto;
-}
-
-/* Hover Effects */
-.tech-item:hover {
-    transform: translateY(-5px);
-    transition: transform 0.3s ease;
-}
-
-.model-showcase:hover .placeholder-image {
-    border-color: var(--red);
-    transition: border-color 0.3s ease;
+    
+    .section-title {
+        font-size: 2rem;
+    }
 }
