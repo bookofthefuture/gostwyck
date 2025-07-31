@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewiring Project - Gostwyck Build Archive</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-text">
+                    <h1><a href="../index.html" style="text-decoration: none; color: inherit;">GOSTWYCK</a></h1>
+                </div>
+                <img src="../assets/shield-simple.png" alt="Gostwyck" class="logo-shield-img">
+            </div>
+            
+            <div class="menu-toggle">&#9776;</div>
+            
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#models">Models</a></li>
+                    <li><a href="../build-archive.html">Build Archive</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="story-page">
+        <div class="container">
+            <div class="story-content">
+                <h1 class="story-title">Rewiring the Z3: Stop Blowing Stuff Up</h1>
+                
+                <section class="story-section">
+                    <h2>Learning from Mistakes</h2>
+                    <p>The initial electrical implementation of the Spyder suffered from numerous issues stemming from inexperience with 12V automotive systems. As the subtitle suggests, early mistakes led to component failures that necessitated a complete rewiring approach.</p>
+                </section>
+
+                <section class="story-section">
+                    <h2>The Core Problem</h2>
+                    <p>Electric vehicle conversions require sophisticated power management systems where timing and sequence are critical. The fundamental challenge: <em>"the right things have to turn on at the right time."</em></p>
+                    
+                    <p>Our initial wiring approach ignored these critical timing requirements, leading to:</p>
+                    <ul>
+                        <li>Component damage from improper power sequencing</li>
+                        <li>Unreliable system operation</li>
+                        <li>Safety concerns from uncontrolled power flow</li>
+                        <li>Diagnostic difficulties due to poor organization</li>
+                    </ul>
+                </section>
+
+                <section class="story-section">
+                    <h2>Three Critical Problems Identified</h2>
+                    <p>The rewiring project addressed three fundamental electrical system issues:</p>
+                    
+                    <h3>1. Wiring Sequence Management</h3>
+                    <p>Proper startup and shutdown sequences are essential for electric vehicle safety and component longevity. Systems must initialize in the correct order to prevent damage.</p>
+
+                    <h3>2. Power Management Complexity</h3>
+                    <p>Managing multiple voltage levels (high voltage traction, 12V auxiliary, charging systems) requires careful isolation and control strategies.</p>
+
+                    <h3>3. Electrical Failure Prevention</h3>
+                    <p>Implementing proper fusing, grounding, and circuit protection to prevent the component failures experienced in early iterations.</p>
+                </section>
+
+                <section class="story-section">
+                    <h2>Solution Strategy</h2>
+                    <p>The comprehensive rewiring project involved:</p>
+                    
+                    <ul>
+                        <li><strong>Complete electrical audit</strong> - Mapping all existing connections</li>
+                        <li><strong>System redesign</strong> - Creating proper power distribution architecture</li>
+                        <li><strong>Sequential implementation</strong> - Rebuilding systems in logical order</li>
+                        <li><strong>Testing protocols</strong> - Verifying each circuit before integration</li>
+                        <li><strong>Safety systems</strong> - Implementing proper protection throughout</li>
+                    </ul>
+                </section>
+
+                <section class="story-section">
+                    <h2>Safety Considerations</h2>
+                    <p>The rewiring project prioritized safety through:</p>
+                    <ul>
+                        <li>Proper circuit isolation and protection</li>
+                        <li>Grounding system integrity</li>
+                        <li>Emergency shutdown capabilities</li>
+                        <li>Clear labeling and documentation</li>
+                        <li>Compliance with automotive electrical standards</li>
+                    </ul>
+
+                    <div class="technical-note">
+                        <h3>Lessons Learned</h3>
+                        <p>This project reinforced the importance of proper planning and professional-grade practices in automotive electrical work. While DIY approaches can be successful, they require respect for the complexity and safety requirements of automotive systems.</p>
+                    </div>
+                </section>
+
+                <div class="story-footer">
+                    <a href="../build-archive.html" class="btn">Back to Build Archive</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2025 Gostwyck. Crafting electric dreams with vintage soul.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
