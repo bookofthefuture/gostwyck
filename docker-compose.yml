@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  gostwyck-web:
+    build: .
+    container_name: gostwyck-web
+    restart: unless-stopped
+    networks:
+      - traefik
+    labels:
+      # Enable Traefik for this service
+      - "traefik.enable=true"
+      
+      # Define the router for HTTP (will redirect to HTTPS)
+      - "traefik.http.routers.gostwyck-http.rule=Host(`gostwyck.co.uk`)"
+      - "traefik.http.routers.gostwyck-http.entrypoints=web"
+      - "traefik.http.routers.gostwyck-http.middlewares=redirect-to-https"
+      - "traefik.http.routers.gostwyck-http.service=gostwyck-web"
+      
+      # Define the router for HTTPS
+      - "traefik.http.routers.gostwyck-https.rule=Host(`gostwyck.co.uk`)"
+      - "traefik.http.routers.gostwyck-https.entrypoints=websecure"
+      - "traefik.http.routers.gostwyck-https.tls=true"
+      - "traefik.http.routers.gostwyck-https.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.gostwyck-https.service=gostwyck-web"
+      
+      # Define the service
+      - "traefik.http.services.gostwyck-web.loadbalancer.server.port=80"
+      
+      # Redirect middleware
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.permanent=true"
+
+networks:
+  traefik:
+    external: true
