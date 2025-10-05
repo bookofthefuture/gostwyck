@@ -1041,6 +1041,32 @@ h2 a:hover {
     margin-bottom: 0;
 }
 
+/* Manual Images */
+.manual-image {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.manual-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: block;
+    margin: 0 auto;
+}
+
+.manual-image .image-caption {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #666;
+    font-style: italic;
+    line-height: 1.5;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .menu-toggle {
