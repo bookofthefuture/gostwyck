@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner's Manuals - Gostwyck</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-text">
+                    <h1><a href="../index.html" style="text-decoration: none; color: inherit;">GOSTWYCK</a></h1>
+                </div>
+                <img src="../assets/shield-simple.png" alt="Gostwyck" class="logo-shield-img">
+            </div>
+
+            <div class="menu-toggle">&#9776;</div>
+
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#models">Models</a></li>
+                    <li><a href="../index.html#heritage">Heritage</a></li>
+                    <li><a href="index.html">Manuals</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="manuals-index">
+        <div class="container">
+            <div class="manuals-header">
+                <h1>Owner's Manuals</h1>
+                <p class="manuals-intro">Comprehensive technical documentation for your Gostwyck vehicle. Each manual covers multiple revisions and includes detailed diagrams, specifications, and maintenance procedures.</p>
+            </div>
+
+            <div class="manuals-grid">
+                <div class="manual-card">
+                    <div class="manual-card-header spyder-header">
+                        <h2>Spyder Manual</h2>
+                        <p class="manual-subtitle">Electric Roadster</p>
+                    </div>
+                    <div class="manual-card-body">
+                        <p>Complete technical documentation for the Gostwyck Spyder, including all revisions from the original 2020 conversion through current specifications.</p>
+                        <ul class="manual-features">
+                            <li>Technical specifications by revision</li>
+                            <li>Electrical system diagrams</li>
+                            <li>Maintenance procedures</li>
+                            <li>Troubleshooting guides</li>
+                        </ul>
+                        <a href="spyder.html" class="btn">View Spyder Manual</a>
+                    </div>
+                </div>
+
+                <div class="manual-card">
+                    <div class="manual-card-header gt-header">
+                        <h2>GT Manual</h2>
+                        <p class="manual-subtitle">Grand Tourer</p>
+                    </div>
+                    <div class="manual-card-body">
+                        <p>Detailed technical reference for the Gostwyck GT, covering all revisions and updates since initial development.</p>
+                        <ul class="manual-features">
+                            <li>Technical specifications by revision</li>
+                            <li>Electrical system diagrams</li>
+                            <li>Maintenance procedures</li>
+                            <li>Troubleshooting guides</li>
+                        </ul>
+                        <a href="gt.html" class="btn">View GT Manual</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2025 Gostwyck. Crafting electric dreams with vintage soul.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

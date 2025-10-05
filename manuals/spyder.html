@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spyder Owner's Manual - Gostwyck</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-text">
+                    <h1><a href="../index.html" style="text-decoration: none; color: inherit;">GOSTWYCK</a></h1>
+                </div>
+                <img src="../assets/shield-simple.png" alt="Gostwyck" class="logo-shield-img">
+            </div>
+
+            <div class="menu-toggle">&#9776;</div>
+
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#models">Models</a></li>
+                    <li><a href="../index.html#heritage">Heritage</a></li>
+                    <li><a href="index.html">Manuals</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="manual-page">
+        <div class="manual-container">
+            <!-- Sidebar Navigation -->
+            <aside class="manual-sidebar">
+                <div class="manual-title">
+                    <h2>Spyder Manual</h2>
+                    <p class="version-selector-label">Select Revision:</p>
+                    <select id="version-selector" class="version-selector">
+                        <option value="v1.0">v1.0 - 2020 Front Motor Build</option>
+                        <option value="v2.0">v2.0 - 2022 Rear Motor Upgrade</option>
+                        <option value="v3.0" selected>v3.0 - Z300S Body & 530e Battery</option>
+                    </select>
+                </div>
+
+                <nav class="manual-nav">
+                    <ul>
+                        <li><a href="#overview" class="active">Overview</a></li>
+                        <li><a href="#specifications">Technical Specifications</a></li>
+                        <li><a href="#powertrain">Powertrain System</a></li>
+                        <li><a href="#battery">Battery System</a></li>
+                        <li><a href="#electrical">Electrical System</a></li>
+                        <li><a href="#charging">Charging System</a></li>
+                        <li><a href="#controls">Controls & Software</a></li>
+                        <li><a href="#maintenance">Maintenance</a></li>
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="#diagrams">System Diagrams</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="manual-content">
+                <section id="overview" class="manual-section">
+                    <h1>Spyder Technical Service Manual</h1>
+                    <div class="version-badge">Revision 2.0</div>
+
+                    <div class="manual-intro">
+                        <p>This technical service manual provides comprehensive documentation for the Gostwyck Spyder electric vehicle conversion, including component specifications, diagnostic procedures, maintenance schedules, and repair information.</p>
+                        <div class="warning-box">
+                            <strong>Warning:</strong> This vehicle contains high-voltage electrical systems operating at up to 360V DC. Only qualified technicians with appropriate HV training should perform work on high-voltage components. Always follow lockout/tagout procedures.
+                        </div>
+                    </div>
+
+                    <h2>Vehicle Overview</h2>
+                    <p>The Gostwyck Spyder is a ground-up electric conversion of a BMW Z3 roadster (E36/7 platform), built during 2020-2021 and progressively upgraded. The conversion features components from Mitsubishi Outlander PHEV and BMW hybrid donor vehicles, controlled via OpenInverter open-source software. The current v3.0 configuration features a customised Tribute Automotive Z300S body kit inspired by 1950s/60s sports cars.</p>
+
+                    <h3>Build History</h3>
+                    <div class="spec-table">
+                        <table>
+                            <tr>
+                                <th>Version</th>
+                                <th>Build Date</th>
+                                <th>Key Changes</th>
+                            </tr>
+                            <tr>
+                                <td><strong>v1.0</strong></td>
+                                <td>2020-2021</td>
+                                <td>Original build with Outlander front motor/generator and Gen 2 Prius inverter</td>
+                            </tr>
+                            <tr>
+                                <td><strong>v2.0</strong></td>
+                                <td>June 2022</td>
+                                <td>Motor upgrade to Outlander rear motor, improved adaptor plate, lower battery box, neater packaging</td>
+                            </tr>
+                            <tr>
+                                <td><strong>v3.0</strong></td>
+                                <td>Current</td>
+                                <td>Body swap to customised Tribute Automotive Z300S kit; upgraded to 6× BMW 530e battery modules (higher capacity)</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Key Features (v3.0)</h3>
+                        <ul>
+                            <li>Mitsubishi Outlander PHEV rear motor with Gen 3 Prius inverter</li>
+                            <li>BMW 530e lithium-ion battery modules (6× modules, ~12 kWh)</li>
+                            <li>Original BMW Z3 chassis and suspension</li>
+                            <li>Tribute Automotive Z300S body kit (customised)</li>
+                            <li>1950s/60s-inspired roadster styling (Jaguar/Maserati influence)</li>
+                            <li>OpenInverter open-source control software</li>
+                        </ul>
+                    </div>
+
+                    <h2>Components Bill of Materials</h2>
+                    <p>The Spyder conversion uses components sourced from various donor vehicles and aftermarket suppliers. Component selection evolved between v1.0 and v2.0. Below is a comprehensive list with version-specific notes (2022 pricing).</p>
+
+                    <div class="spec-table">
+                        <table>
+                            <tr>
+                                <th>Component</th>
+                                <th>Source/Specification</th>
+                                <th>Version</th>
+                                <th>Cost</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Motor</strong></td>
+                                <td>Mitsubishi Outlander PHEV front motor/generator</td>
+                                <td>v1.0</td>
+                                <td>£400</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Motor</strong></td>
+                                <td>Mitsubishi Outlander PHEV rear traction motor</td>
+                                <td>v2.0+</td>
+                                <td>£250</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Inverter</strong></td>
+                                <td>Gen 3 Prius inverter with OpenInverter board</td>
+                                <td>All</td>
+                                <td>£150</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Control Board</strong></td>
+                                <td>OpenInverter plugin board</td>
+                                <td>All</td>
+                                <td>£400</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Battery Modules</strong></td>
+                                <td>5× BMW 330e hybrid modules</td>
+                                <td>v1.0-v2.0</td>
+                                <td>£800</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Battery Modules</strong></td>
+                                <td>6× BMW 530e hybrid modules (higher capacity)</td>
+                                <td>v3.0</td>
+                                <td>£800</td>
+                            </tr>
+                            <tr>
+                                <td><strong>BMS</strong></td>
+                                <td>SimpBMS Spaceballs ESP32 (customised code)</td>
+                                <td>All</td>
+                                <td>£30</td>
+                            </tr>
+                            <tr>
+                                <td><strong>HVJB</strong></td>
+                                <td>BMW 330e S-Box (Safety Box)</td>
+                                <td>v1.0</td>
+                                <td>w/ modules</td>
+                            </tr>
+                            <tr>
+                                <td><strong>HVJB</strong></td>
+                                <td>Custom-built HV junction box (see detailed spec)</td>
+                                <td>v2.0+</td>
+                                <td>~£200</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Onboard Charger</strong></td>
+                                <td>Mitsubishi Outlander PHEV 3.3kW (includes DC-DC converter)</td>
+                                <td>All</td>
+                                <td>£120</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Electric Power Steering Pump</strong></td>
+                                <td>Vauxhall Zafira electric power steering pump</td>
+                                <td>All</td>
+                                <td>£40</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Electric Vacuum Pump</strong></td>
+                                <td>Hella UP38 electric brake vacuum pump</td>
+                                <td>All</td>
+                                <td>£30</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Electric Water Heater</strong></td>
+                                <td>Mitsubishi Outlander PHEV cabin heater</td>
+                                <td>All</td>
+                                <td>~£100</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cooling System</strong></td>
+                                <td>Radiator, Bosch electric coolant pump, hoses</td>
+                                <td>All</td>
+                                <td>~£200</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Adaptor Plate</strong></td>
+                                <td>Custom-fabricated steel plate</td>
+                                <td>v1.0</td>
+                                <td>£80</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Adaptor Plate</strong></td>
+                                <td>Improved, lighter design</td>
+                                <td>v2.0+</td>
+                                <td>£80</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Motor Coupler</strong></td>
+                                <td>Ford+BMW clutch centres (v1.0 had noise issues)</td>
+                                <td>All</td>
+                                <td>~£10</td>
+                            </tr>
+                            <tr>
+                                <td><strong>HV Cables & Connectors</strong></td>
+                                <td>Custom HV wiring and connectors</td>
+                                <td>All</td>
+                                <td>~£200</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Battery Enclosure</strong></td>
+                                <td>Custom-fabricated steel box (v2.0 lower mounted)</td>
+                                <td>All</td>
+                                <td>£80</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Body Kit</strong></td>
+                                <td>Tribute Automotive Z300S (customised for EV)</td>
+                                <td>v3.0</td>
+                                <td>£3,180</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Miscellaneous</strong></td>
+                                <td>Fuses, contactors, wiring, fasteners, hardware</td>
+                                <td>All</td>
+                                <td>£350</td>
+                            </tr>
+                            <tr style="background-color: #f0f8ff; font-weight: bold;">
+                                <td colspan="3"><strong>Total Estimated Cost (v2.0)</strong></td>
+                                <td><strong>£2,910</strong></td>
+                            </tr>
+                            <tr style="background-color: #e3f2fd; font-weight: bold;">
+                                <td colspan="3"><strong>Total Estimated Cost (v3.0)</strong></td>
+                                <td><strong>£6,090</strong></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>Cost Notes</h4>
+                        <ul>
+                            <li>Prices shown are approximate 2022 UK pricing for used donor components</li>
+                            <li>Body kit (v3.0): £2,650 inc. VAT (current pricing, was £2,400 + VAT)</li>
+                            <li>Does not include base donor vehicle (BMW Z3) cost</li>
+                            <li>Does not include tools, consumables, or labour</li>
+                            <li>v2.0 budget: ~£3,000 for powertrain and electrical components</li>
+                            <li>v3.0 total: ~£6,100 including body kit and battery upgrade</li>
+                            <li>Alternative component choices available (e.g., Nissan Leaf motor/inverter)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="specifications" class="manual-section">
+                    <h2>Technical Specifications</h2>
+
+                    <div class="spec-table" id="spec-tables">
+                        <table>
+                            <tr>
+                                <th colspan="2">Powertrain</th>
+                            </tr>
+                            <tr>
+                                <td>Motor Type</td>
+                                <td>3-Phase AC Permanent Magnet Synchronous Motor</td>
+                            </tr>
+                            <tr>
+                                <td>Motor Source</td>
+                                <td><span class="version-specific" data-v1="Mitsubishi Outlander PHEV front motor/generator" data-v2="Mitsubishi Outlander PHEV rear traction motor" data-v3="Mitsubishi Outlander PHEV rear traction motor">Mitsubishi Outlander PHEV rear traction motor</span></td>
+                            </tr>
+                            <tr>
+                                <td>Peak Power</td>
+                                <td>~60 kW (80 hp)</td>
+                            </tr>
+                            <tr>
+                                <td>Peak Torque</td>
+                                <td>~195 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>Inverter</td>
+                                <td>Gen 3 Prius with OpenInverter control board</td>
+                            </tr>
+                            <tr>
+                                <td>Transmission</td>
+                                <td>Original BMW Z3 5-speed manual</td>
+                            </tr>
+                            <tr>
+                                <td>HVJB</td>
+                                <td><span class="version-specific" data-v1="BMW 330e S-Box" data-v2="Custom-built with Gigavac contactors" data-v3="Custom-built with Gigavac contactors">Custom-built with Gigavac contactors</span></td>
+                            </tr>
+                        </table>
+
+                        <table>
+                            <tr>
+                                <th colspan="2">Battery System</th>
+                            </tr>
+                            <tr>
+                                <td>Chemistry</td>
+                                <td>Lithium-ion (NMC)</td>
+                            </tr>
+                            <tr>
+                                <td>Modules</td>
+                                <td><span class="version-specific" data-v1="5× BMW 330e hybrid modules" data-v2="5× BMW 330e hybrid modules" data-v3="6× BMW 530e hybrid modules">6× BMW 530e hybrid modules</span></td>
+                            </tr>
+                            <tr>
+                                <td>Nominal Voltage</td>
+                                <td><span class="version-specific" data-v1="~265V (80S)" data-v2="~265V (80S)" data-v3="355V (96S)">355V (96S)</span></td>
+                            </tr>
+                            <tr>
+                                <td>Capacity</td>
+                                <td><span class="version-specific" data-v1="~7.6 kWh" data-v2="~7.6 kWh" data-v3="12 kWh">12 kWh</span></td>
+                            </tr>
+                            <tr>
+                                <td>BMS</td>
+                                <td>SimpBMS Spaceballs ESP32</td>
+                            </tr>
+                        </table>
+
+                        <table>
+                            <tr>
+                                <th colspan="2">Performance</th>
+                            </tr>
+                            <tr>
+                                <td>Range</td>
+                                <td><span class="version-specific" data-v1="~25 miles" data-v2="~25 miles" data-v3="~40 miles (untested)">~40 miles (untested)</span></td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>Limited by gearing</td>
+                            </tr>
+                            <tr>
+                                <td>0-60 mph</td>
+                                <td><span class="version-specific" data-v1="Slow (front motor limited)" data-v2="Performance-oriented (TBD)" data-v3="Performance-oriented (TBD)">Performance-oriented (TBD)</span></td>
+                            </tr>
+                        </table>
+
+                        <table>
+                            <tr>
+                                <th colspan="2">Body & Styling</th>
+                            </tr>
+                            <tr>
+                                <td>Body</td>
+                                <td><span class="version-specific" data-v1="Original BMW Z3" data-v2="Original BMW Z3" data-v3="Tribute Automotive Z300S kit">Tribute Automotive Z300S kit</span></td>
+                            </tr>
+                            <tr>
+                                <td>Styling</td>
+                                <td><span class="version-specific" data-v1="BMW roadster" data-v2="BMW roadster" data-v3="1950s/60s Jaguar/Maserati inspired">1950s/60s Jaguar/Maserati inspired</span></td>
+                            </tr>
+                        </table>
+
+                        <table>
+                            <tr>
+                                <th colspan="2">Charging</th>
+                            </tr>
+                            <tr>
+                                <td>Onboard Charger</td>
+                                <td>Mitsubishi Outlander PHEV charger</td>
+                            </tr>
+                            <tr>
+                                <td>Charging Power</td>
+                                <td>3.3 kW (Type 2 connector)</td>
+                            </tr>
+                            <tr>
+                                <td>Charge Time (0-100%)</td>
+                                <td><span class="version-specific" data-v1="~2.5 hours" data-v2="~2.5 hours" data-v3="~4 hours">~4 hours</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="powertrain" class="manual-section">
+                    <h2>Powertrain System</h2>
+
+                    <h3>Motor - Version History</h3>
+
+                    <h4>v1.0 - Front Motor/Generator (2020-2021)</h4>
+                    <p>The original build used the Mitsubishi Outlander PHEV front motor/generator unit. While this created a functional EV, performance was inadequate for the application.</p>
+
+                    <div class="warning-box">
+                        <h4>v1.0 Performance Issues</h4>
+                        <ul>
+                            <li><strong>Poor Torque Curve:</strong> Motor designed primarily as a generator, not optimized for traction</li>
+                            <li><strong>Slow Acceleration:</strong> 0-60 times described as "pathetic" during June 2022 testing</li>
+                            <li><strong>Power Delivery:</strong> While kW output similar to rear motor, torque delivery unsuitable for vehicle propulsion</li>
+                            <li><strong>Decision:</strong> Led to complete motor upgrade in June 2022</li>
+                        </ul>
+                    </div>
+
+                    <h4>v2.0+ - Rear Motor (June 2022 onwards)</h4>
+                    <p>The v2.0 upgrade replaced the front motor with the Mitsubishi Outlander PHEV rear traction motor, specifically designed for vehicle propulsion. This motor features larger magnets, better torque curve, and higher torque per amp.</p>
+
+                    <div class="info-box">
+                        <h4>Rear Motor Specifications (v2.0+)</h4>
+                        <ul>
+                            <li><strong>Source:</strong> Mitsubishi Outlander PHEV rear traction motor</li>
+                            <li><strong>Type:</strong> 3-phase AC permanent magnet synchronous motor (PMSM)</li>
+                            <li><strong>Peak Power:</strong> ~60 kW (80 hp)</li>
+                            <li><strong>Peak Torque:</strong> ~195 Nm</li>
+                            <li><strong>Advantages over v1.0:</strong>
+                                <ul>
+                                    <li>Significantly larger magnets</li>
+                                    <li>Superior torque curve for traction</li>
+                                    <li>More torque per amp drawn</li>
+                                    <li>Better acceleration characteristics</li>
+                                    <li>Improved efficiency for extended range</li>
+                                </ul>
+                            </li>
+                            <li><strong>Mounting:</strong> Custom adapter plate to BMW E36/Z3 gearbox (lighter than v1.0 design)</li>
+                            <li><strong>Coupling:</strong> Custom coupler using Ford and BMW clutch centres</li>
+                        </ul>
+                    </div>
+
+                    <div class="diagram-placeholder">
+                        <p>[Diagram: Motor mounting and coupling assembly - v2.0]</p>
+                        <p>Improved adapter plate design, lighter weight, neater engine bay packaging</p>
+                        <p>Ford clutch centre (motor splines) to BMW clutch centre (gearbox splines)</p>
+                    </div>
+
+                    <h4>Known Issues - Motor Coupling</h4>
+                    <div class="warning-box">
+                        <strong>v1.0 Coupler Noise:</strong> Original coupler design produced excessive noise leading to MOT failure. Required complete teardown and rebuild with improved alignment. v2.0 incorporated lessons learned.
+                    </div>
+
+                    <h3>Inverter System</h3>
+
+                    <p>All versions of the Spyder use a Toyota Gen 3 Prius inverter paired with an OpenInverter control board. This combination has remained consistent throughout the build, providing reliable motor control for both the front motor/generator (v1.0) and rear traction motor (v2.0+).</p>
+
+                    <div class="info-box">
+                        <h4>Inverter System Components (All Versions)</h4>
+                        <ul>
+                            <li><strong>Main Inverter:</strong> Toyota Gen 3 Prius power electronics unit (~£150)</li>
+                            <li><strong>Control Board:</strong> OpenInverter plugin board (£400)</li>
+                            <li><strong>Cooling:</strong> Liquid-cooled via vehicle coolant system</li>
+                            <li><strong>Power Rating:</strong> Suitable for motors up to ~80 kW peak</li>
+                            <li><strong>Features:</strong>
+                                <ul>
+                                    <li>Field-oriented control (FOC)</li>
+                                    <li>Regenerative braking with adjustable levels</li>
+                                    <li>Configurable power curves and torque maps</li>
+                                    <li>CAN bus communication with BMS and VCU</li>
+                                    <li>WiFi-based web interface for parameter tuning</li>
+                                    <li>Real-time diagnostics and monitoring</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>OpenInverter Configuration</h4>
+                        <p>The OpenInverter board enables complete control over the Prius inverter, allowing it to drive various motor types. Parameters can be adjusted via WiFi connection for optimal performance with different motor configurations.</p>
+                    </div>
+
+                    <h3>Transmission & Drivetrain</h3>
+                    <p>The Spyder retains the original BMW Z3 5-speed manual transmission and differential. The electric motor is coupled to the gearbox input shaft via a custom-fabricated adapter plate and coupler assembly. No clutch is used - the motor is direct-coupled to the input shaft.</p>
+
+                    <div class="info-box">
+                        <h4>Drivetrain Specifications</h4>
+                        <ul>
+                            <li><strong>Gearbox:</strong> BMW Z3 5-speed manual (Getrag or ZF)</li>
+                            <li><strong>Final Drive:</strong> Original BMW differential (ratio varies by model)</li>
+                            <li><strong>Coupling Method:</strong> Direct coupling (no clutch)</li>
+                            <li><strong>Starting:</strong> Vehicle must be in neutral before energizing HV system</li>
+                            <li><strong>Gear Selection:</strong> Manual gear changes while driving, synchromesh operation</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="battery" class="manual-section">
+                    <h2>Battery System</h2>
+
+                    <h3>Battery Pack Construction - Version History</h3>
+
+                    <h4>v1.0 & v2.0 - BMW 330e Modules</h4>
+                    <p>The original battery pack configuration used 5 BMW 330e hybrid battery modules housed in a custom-built enclosure. This configuration provides approximately 7.6 kWh of usable capacity, achieving approximately 25 miles of real-world range.</p>
+
+                    <div class="info-box">
+                        <h4>330e Battery Pack Specifications (v1.0-v2.0)</h4>
+                        <ul>
+                            <li><strong>Modules:</strong> 5× BMW 330e hybrid battery modules</li>
+                            <li><strong>Chemistry:</strong> Lithium-ion NMC (Nickel Manganese Cobalt)</li>
+                            <li><strong>Configuration:</strong> 80S (series cells)</li>
+                            <li><strong>Nominal Voltage:</strong> ~265V</li>
+                            <li><strong>Total Capacity:</strong> ~7.6 kWh</li>
+                            <li><strong>Enclosure:</strong> Custom-fabricated battery box (v2.0 lower mounted)</li>
+                            <li><strong>Mounting:</strong> Chassis-mounted for optimal weight distribution</li>
+                            <li><strong>Cost (2022):</strong> £800 for battery modules</li>
+                        </ul>
+                    </div>
+
+                    <h4>v3.0 - BMW 530e Modules & Body Upgrade</h4>
+                    <p>The v3.0 upgrade brought two major changes: battery upgrade to 6 BMW 530e hybrid modules and a complete body swap to a customised Tribute Automotive Z300S kit. The 530e represents a more recent revision with higher energy density, providing increased range. The Z300S body kit transforms the Z3 into a 1950s/60s-inspired roadster reminiscent of classic Jaguar and Maserati sports cars.</p>
+
+                    <div class="info-box">
+                        <h4>530e Battery Pack Specifications (v3.0)</h4>
+                        <ul>
+                            <li><strong>Modules:</strong> 6× BMW 530e hybrid battery modules (post-2020 revision)</li>
+                            <li><strong>Chemistry:</strong> Lithium-ion NMC (Nickel Manganese Cobalt)</li>
+                            <li><strong>Configuration:</strong> 96S (series cells)</li>
+                            <li><strong>Nominal Voltage:</strong> 355V (vs 265V/80S for 330e)</li>
+                            <li><strong>Total Capacity:</strong> 12 kWh</li>
+                            <li><strong>Advantages:</strong> Higher energy density, improved range, more recent cell technology (post-2020)</li>
+                            <li><strong>Enclosure:</strong> Same custom-fabricated battery box</li>
+                            <li><strong>Cost:</strong> £800 for battery modules</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>Body & Styling (v3.0)</h4>
+                        <ul>
+                            <li><strong>Base Kit:</strong> Tribute Automotive Z300S</li>
+                            <li><strong>Cost:</strong> £2,650 inc. VAT (was £2,400 + VAT)</li>
+                            <li><strong>Customisation:</strong> Modified for electric vehicle packaging</li>
+                            <li><strong>Design:</strong> 1950s/60s British/Italian sports car styling</li>
+                            <li><strong>Influences:</strong> Jaguar and Maserati roadsters</li>
+                            <li><strong>Chassis:</strong> Retains original BMW Z3 structure</li>
+                            <li><strong>Material:</strong> GRP (fibreglass) body panels</li>
+                            <li><strong>Purpose:</strong> Completes the vintage sports car aesthetic</li>
+                        </ul>
+                    </div>
+
+                    <div class="diagram-placeholder">
+                        <p>[Diagram: Battery pack layout and mounting]</p>
+                        <p>v1.0-v2.0: 5× BMW 330e modules</p>
+                        <p>v3.0: 6× BMW 530e modules (higher capacity)</p>
+                    </div>
+
+                    <h3>Battery Management System (BMS)</h3>
+                    <p>The battery pack is managed by a SimpBMS Spaceballs ESP32 system running customised code. The BMS monitors individual cell voltages, temperatures, and overall pack health to ensure safe operation and longevity.</p>
+
+                    <div class="info-box">
+                        <h4>BMS Specifications</h4>
+                        <ul>
+                            <li><strong>Hardware:</strong> SimpBMS Spaceballs ESP32 board</li>
+                            <li><strong>Software:</strong> Custom-coded firmware</li>
+                            <li><strong>Processor:</strong> ESP32 microcontroller</li>
+                            <li><strong>Cost:</strong> £30</li>
+                            <li><strong>Configuration:</strong> Tailored for BMW 330e/530e modules</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>BMS Functions</h4>
+                        <ul>
+                            <li>Cell voltage monitoring and balancing</li>
+                            <li>Temperature monitoring across all modules</li>
+                            <li>State of charge (SOC) calculation</li>
+                            <li>Overcurrent and overvoltage protection</li>
+                            <li>Communication with main VCU via CAN bus</li>
+                            <li>ESP32 enables WiFi connectivity for monitoring</li>
+                        </ul>
+                    </div>
+
+                    <h3>High Voltage Junction Box - Version History</h3>
+
+                    <h4>v1.0 - BMW 330e S-Box</h4>
+                    <p>The original build used the BMW 330e Safety Box (S-Box) as the high voltage junction box. This compact unit included integrated contactors, pre-charge relay, and current sensing, making it ideal for the initial lower-power build.</p>
+
+                    <div class="info-box">
+                        <h4>BMW S-Box Features (v1.0)</h4>
+                        <ul>
+                            <li>Compact size - fits inside battery box</li>
+                            <li>Integrated contactors (smaller BMW units)</li>
+                            <li>Pre-charge relay and resistor</li>
+                            <li>Current sensing capability</li>
+                            <li>CAN bus communication for voltage/current data</li>
+                        </ul>
+                    </div>
+
+                    <h4>v2.0+ - Custom High Voltage Junction Box</h4>
+                    <p>The v2.0 motor upgrade required a complete redesign of the HVJB. The BMW S-Box contactors were insufficient for the higher-power rear motor, necessitating a custom solution with industrial-grade components.</p>
+
+                    <div class="info-box">
+                        <h4>Custom HVJB Components (v2.0+)</h4>
+                        <ul>
+                            <li><strong>Main Contactors:</strong> 3× Gigavac GV242MAB contactors
+                                <ul>
+                                    <li>High current rating for rear motor</li>
+                                    <li>Secondary contacts for position sensing</li>
+                                    <li>Negative contactor, primary contactor, charging isolation contactor</li>
+                                </ul>
+                            </li>
+                            <li><strong>Pre-charge Resistor:</strong> Arcol high-power resistor
+                                <ul>
+                                    <li>Safely charges inverter capacitors before full voltage connection</li>
+                                    <li>Critical safety component</li>
+                                </ul>
+                            </li>
+                            <li><strong>Pre-charge Relay:</strong> Panasonic relay
+                                <ul>
+                                    <li>Controls pre-charge resistor engagement</li>
+                                    <li>Engages before main contactors</li>
+                                </ul>
+                            </li>
+                            <li><strong>Current Shunt:</strong> Isabellenhutte precision shunt
+                                <ul>
+                                    <li>High-accuracy current sensing</li>
+                                    <li>Integrated power and CAN bus connections</li>
+                                    <li>Provides voltage and current data to VCU</li>
+                                </ul>
+                            </li>
+                            <li><strong>Bus Bars:</strong> Custom copper bus bars (20mm × 2mm, >35mm² cross-section)</li>
+                            <li><strong>Control Connections:</strong> 16-way waterproof connector</li>
+                            <li><strong>Enclosure:</strong> ABS waterproof enclosure with steel mounting plate</li>
+                            <li><strong>HV Fusing:</strong> Main HV fuse protection</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>Reasons for Custom HVJB (v2.0+)</h4>
+                        <ul>
+                            <li>BMW S-Box contactors too small for rear motor power requirements</li>
+                            <li>Needed additional capacity for second battery pack option</li>
+                            <li>Required space for heater and charger connections</li>
+                            <li>Allows reuse of OEM BMW battery pack connectors</li>
+                            <li>Provides proper isolation between charging and driving modes</li>
+                            <li>Industrial-grade Gigavac contactors for reliability</li>
+                        </ul>
+                    </div>
+
+                    <h4>HVJB Operation Sequence</h4>
+                    <p>When the ignition key is turned:</p>
+                    <ol>
+                        <li>Negative contactor engages</li>
+                        <li>Pre-charge relay engages, connecting Arcol resistor</li>
+                        <li>Inverter capacitors charge slowly through resistor</li>
+                        <li>Once voltage equalizes, primary contactor engages</li>
+                        <li>Pre-charge relay disengages (resistor bypassed)</li>
+                        <li>System ready for full power operation</li>
+                    </ol>
+
+                    <div class="warning-box">
+                        <strong>Warning:</strong> Never attempt to service the battery pack or HVJB without proper training. High voltage can cause serious injury or death. Always follow lockout/tagout procedures when working on HV systems. Multiple pre-charge resistors have been damaged due to wiring errors - extreme care must be taken during any service work.
+                    </div>
+                </section>
+
+                <section id="electrical" class="manual-section">
+                    <h2>Electrical System</h2>
+
+                    <h3>High Voltage System</h3>
+                    <p>The high voltage (HV) system consists of the battery pack, BMW 330e HVJB (High Voltage Junction Box), inverter, motor, and associated cabling and safety systems. All HV cabling uses appropriate orange insulation and meets safety standards for high voltage automotive applications.</p>
+
+                    <div class="info-box">
+                        <h4>High Voltage Safety Systems</h4>
+                        <ul>
+                            <li><strong>Main Contactors:</strong> Controlled via BMW 330e HVJB</li>
+                            <li><strong>Pre-charge Circuit:</strong> Ensures safe contactor closure</li>
+                            <li><strong>HV Interlock Loop:</strong> Safety disconnect system</li>
+                            <li><strong>Isolation Monitoring:</strong> Detects ground faults</li>
+                            <li><strong>Fusing:</strong> High voltage fuses protect major components</li>
+                        </ul>
+                    </div>
+
+                    <div class="diagram-placeholder">
+                        <p>[Diagram: High voltage electrical schematic]</p>
+                        <p>Battery Pack → HVJB → Contactors → Inverter → Motor</p>
+                        <p>Pre-charge circuit, HV interlock, and safety systems shown</p>
+                    </div>
+
+                    <h3>12V Auxiliary System</h3>
+                    <p>The 12V system powers vehicle accessories and control electronics. A DC-DC converter steps down from the HV battery to maintain the 12V auxiliary battery and power all low-voltage systems.</p>
+
+                    <div class="info-box">
+                        <h4>Auxiliary Systems Powered by 12V</h4>
+                        <ul>
+                            <li>Electric power steering pump</li>
+                            <li>Electric vacuum pump (for brakes)</li>
+                            <li>Electric coolant pump</li>
+                            <li>Mitsubishi Outlander electric heater</li>
+                            <li>Vehicle Control Unit (VCU)</li>
+                            <li>BMS and monitoring systems</li>
+                            <li>Lighting and accessories</li>
+                        </ul>
+                    </div>
+
+                    <div class="diagram-placeholder">
+                        <p>[Diagram: 12V system layout]</p>
+                        <p>DC-DC converter, 12V battery, auxiliary pumps, and control systems</p>
+                    </div>
+
+                    <h3>Auxiliary Components</h3>
+
+                    <h4>Power Steering</h4>
+                    <p>A Vauxhall Zafira electric power steering pump provides hydraulic assist without the need for an engine-driven pump. This pump operates on 12V and is controlled by the vehicle's power steering ECU.</p>
+
+                    <h4>Brake Vacuum</h4>
+                    <p>A Hella UP38 electric vacuum pump maintains brake booster vacuum, as there is no intake manifold vacuum from an ICE engine. This ensures normal brake pedal feel and assist force.</p>
+
+                    <div class="info-box">
+                        <h4>Hella UP38 Specifications</h4>
+                        <ul>
+                            <li><strong>Model:</strong> Hella UP38</li>
+                            <li><strong>Voltage:</strong> 12V DC</li>
+                            <li><strong>Application:</strong> Brake booster vacuum generation</li>
+                            <li><strong>Cost:</strong> £30</li>
+                        </ul>
+                    </div>
+
+                    <h4>Cooling System</h4>
+                    <p>The cooling system provides thermal management for the motor and inverter:</p>
+                    <ul>
+                        <li><strong>Coolant Pump:</strong> Bosch electric coolant pump (12V)</li>
+                        <li><strong>Radiator:</strong> Automotive radiator for heat rejection</li>
+                        <li><strong>Plumbing:</strong> Custom hoses connecting motor and inverter in series</li>
+                        <li><strong>Control:</strong> Temperature-based pump speed control</li>
+                    </ul>
+
+                    <h4>Cabin Heating</h4>
+                    <p>A Mitsubishi Outlander PHEV electric water heater provides cabin heating. The BMW heater controls have been modified with a potentiometer connected to an Arduino for temperature control.</p>
+                </section>
+
+                <section id="charging" class="manual-section">
+                    <h2>Charging System</h2>
+
+                    <h3>Onboard Charger</h3>
+                    <p>The Spyder uses a Mitsubishi Outlander PHEV onboard charger, providing 3.3 kW AC charging capability. This unit includes an integrated DC-DC converter for maintaining the 12V auxiliary battery. The charge port is sourced from the same donor vehicle and mounted in a convenient location on the bodywork.</p>
+
+                    <div class="info-box">
+                        <h4>Charger Components</h4>
+                        <ul>
+                            <li><strong>Charger Unit:</strong> Mitsubishi Outlander PHEV (£120)</li>
+                            <li><strong>DC-DC Converter:</strong> Integrated within charger unit</li>
+                            <li><strong>Charge Port:</strong> Mitsubishi Outlander PHEV Type 2</li>
+                            <li><strong>Power Rating:</strong> 3.3 kW AC charging</li>
+                            <li><strong>DC-DC Output:</strong> 12V for auxiliary systems</li>
+                            <li><strong>Input:</strong> 230V AC single-phase</li>
+                            <li><strong>Connector:</strong> Type 2 (Mennekes) IEC 62196</li>
+                        </ul>
+                    </div>
+
+                    <div class="spec-table">
+                        <table>
+                            <tr>
+                                <th colspan="2">Charging Specifications</th>
+                            </tr>
+                            <tr>
+                                <td>AC Charging Power</td>
+                                <td>3.3 kW</td>
+                            </tr>
+                            <tr>
+                                <td>Charge Time (0-100%)</td>
+                                <td>~2.5 hours @ 3.3 kW</td>
+                            </tr>
+                            <tr>
+                                <td>Connector Type</td>
+                                <td>Type 2 (Mennekes)</td>
+                            </tr>
+                            <tr>
+                                <td>Compatible Charging</td>
+                                <td>Home wallbox, public AC chargers</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <h3>Charging Procedure</h3>
+                    <ol>
+                        <li>Park vehicle and switch off all systems</li>
+                        <li>Open charge port cover</li>
+                        <li>Connect Type 2 charging cable</li>
+                        <li>Charging will begin automatically when cable is locked</li>
+                        <li>LED indicator on charge port shows charging status</li>
+                        <li>Charging completes automatically when battery is full</li>
+                        <li>Disconnect cable and close charge port cover</li>
+                    </ol>
+
+                    <div class="info-box">
+                        <h4>Charging Status Indicators</h4>
+                        <ul>
+                            <li><strong>Solid Blue:</strong> Charging in progress</li>
+                            <li><strong>Flashing Blue:</strong> Charging scheduled/waiting</li>
+                            <li><strong>Green:</strong> Charge complete</li>
+                            <li><strong>Red/Flashing Red:</strong> Charging fault</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="controls" class="manual-section">
+                    <h2>Controls & Software</h2>
+
+                    <h3>Control System</h3>
+                    <p>The Spyder uses open-source control software for motor control and vehicle systems.</p>
+
+                    <h3>Web Interface</h3>
+                    <p>The inverter can be configured via WiFi using a web-based interface for parameter adjustment and monitoring.</p>
+
+                    <div class="info-box">
+                        <h4>Accessing the Web Interface</h4>
+                        <ol>
+                            <li>Connect to the inverter's WiFi network</li>
+                            <li>Navigate to 192.168.4.1 in a web browser</li>
+                            <li>View parameters and make adjustments</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section id="maintenance" class="manual-section">
+                    <h2>Maintenance</h2>
+
+                    <h3>Regular Maintenance Schedule</h3>
+
+                    <div class="spec-table">
+                        <table>
+                            <tr>
+                                <th>Interval</th>
+                                <th>Service Required</th>
+                            </tr>
+                            <tr>
+                                <td>Monthly</td>
+                                <td>Visual inspection of HV cables and connections</td>
+                            </tr>
+                            <tr>
+                                <td>6 Months</td>
+                                <td>12V battery check, tire pressure, coolant level</td>
+                            </tr>
+                            <tr>
+                                <td>Annual</td>
+                                <td>Full system inspection, software updates</td>
+                            </tr>
+                            <tr>
+                                <td>2 Years</td>
+                                <td>Brake fluid replacement, suspension check</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <h3>DIY Maintenance Items</h3>
+                    <ul>
+                        <li>12V battery check and replacement</li>
+                        <li>Tire rotation and pressure checks</li>
+                        <li>Wiper blade replacement</li>
+                        <li>Cabin air filter replacement</li>
+                    </ul>
+
+                    <div class="warning-box">
+                        <strong>Warning:</strong> High voltage system maintenance should only be performed by qualified technicians.
+                    </div>
+                </section>
+
+                <section id="troubleshooting" class="manual-section">
+                    <h2>Troubleshooting</h2>
+
+                    <h3>Common Issues</h3>
+
+                    <div class="troubleshooting-item">
+                        <h4>Vehicle Won't Start</h4>
+                        <ul>
+                            <li>Check 12V battery voltage</li>
+                            <li>Verify HV battery state of charge</li>
+                            <li>Check main contactor operation</li>
+                            <li>Inspect HV fuses</li>
+                        </ul>
+                    </div>
+
+                    <div class="troubleshooting-item">
+                        <h4>Reduced Power</h4>
+                        <ul>
+                            <li>Check for thermal limiting (motor or inverter overheating)</li>
+                            <li>Verify battery state of charge</li>
+                            <li>Check for error codes via web interface</li>
+                        </ul>
+                    </div>
+
+                    <div class="troubleshooting-item">
+                        <h4>Charging Issues</h4>
+                        <ul>
+                            <li>Verify power at charging point</li>
+                            <li>Check charging cable connections</li>
+                            <li>Inspect onboard charger status</li>
+                            <li>Review BMS error logs</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="diagrams" class="manual-section">
+                    <h2>System Diagrams</h2>
+
+                    <h3>High Voltage System Diagram</h3>
+                    <div class="diagram-placeholder large">
+                        <p>[Full system electrical diagram - high voltage]</p>
+                        <p>Battery Pack → Main Fuse → Contactor → Inverter → Motor</p>
+                        <p>Includes: Pre-charge circuit, HV interlock loop, safety systems</p>
+                    </div>
+
+                    <h3>12V System Diagram</h3>
+                    <div class="diagram-placeholder large">
+                        <p>[12V electrical system diagram]</p>
+                        <p>Shows: DC-DC converter, 12V battery, fuse box, lighting, accessories</p>
+                    </div>
+
+                    <h3>Cooling System Diagram</h3>
+                    <div class="diagram-placeholder">
+                        <p>[Thermal management system diagram]</p>
+                        <p>Motor cooling, inverter cooling, battery thermal management</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2025 Gostwyck. Crafting electric dreams with vintage soul.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // Sidebar navigation active state
+        const navLinks = document.querySelectorAll('.manual-nav a');
+        const sections = document.querySelectorAll('.manual-section');
+
+        // Update active link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Version selector
+        document.getElementById('version-selector').addEventListener('change', function(e) {
+            const version = e.target.value;
+            console.log('Selected version:', version);
+
+            // Update the badge
+            document.querySelector('.version-badge').textContent = 'Revision ' + version;
+
+            // Update all version-specific content
+            const versionSpecificElements = document.querySelectorAll('.version-specific');
+            versionSpecificElements.forEach(element => {
+                let versionKey;
+                if (version === 'v1.0') {
+                    versionKey = 'data-v1';
+                } else if (version === 'v2.0') {
+                    versionKey = 'data-v2';
+                } else if (version === 'v3.0') {
+                    versionKey = 'data-v3';
+                }
+
+                if (element.hasAttribute(versionKey)) {
+                    element.textContent = element.getAttribute(versionKey);
+                }
+            });
+        });
+
+        // Smooth scroll for navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

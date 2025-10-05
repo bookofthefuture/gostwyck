@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GT Owner's Manual - Gostwyck</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-text">
+                    <h1><a href="../index.html" style="text-decoration: none; color: inherit;">GOSTWYCK</a></h1>
+                </div>
+                <img src="../assets/shield-simple.png" alt="Gostwyck" class="logo-shield-img">
+            </div>
+
+            <div class="menu-toggle">&#9776;</div>
+
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#models">Models</a></li>
+                    <li><a href="../index.html#heritage">Heritage</a></li>
+                    <li><a href="index.html">Manuals</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="manual-page">
+        <div class="manual-container">
+            <!-- Sidebar Navigation -->
+            <aside class="manual-sidebar">
+                <div class="manual-title">
+                    <h2>GT Manual</h2>
+                    <p class="version-selector-label">Select Revision:</p>
+                    <select id="version-selector" class="version-selector">
+                        <option value="v1.0" selected>v1.0 - Current</option>
+                    </select>
+                </div>
+
+                <nav class="manual-nav">
+                    <ul>
+                        <li><a href="#overview" class="active">Overview</a></li>
+                        <li><a href="#specifications">Technical Specifications</a></li>
+                        <li><a href="#powertrain">Powertrain System</a></li>
+                        <li><a href="#battery">Battery System</a></li>
+                        <li><a href="#electrical">Electrical System</a></li>
+                        <li><a href="#charging">Charging System</a></li>
+                        <li><a href="#controls">Controls & Software</a></li>
+                        <li><a href="#maintenance">Maintenance</a></li>
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="#diagrams">System Diagrams</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="manual-content">
+                <section id="overview" class="manual-section">
+                    <h1>GT Technical Service Manual</h1>
+                    <div class="version-badge">Revision 1.0</div>
+
+                    <div class="manual-intro">
+                        <p>This technical service manual provides comprehensive documentation for the Gostwyck GT electric vehicle conversion, including component specifications, diagnostic procedures, maintenance schedules, and repair information.</p>
+                        <div class="warning-box">
+                            <strong>Warning:</strong> This vehicle contains high-voltage electrical systems operating at up to 650V DC. Only qualified technicians with appropriate HV training should perform work on high-voltage components. Always follow lockout/tagout procedures.
+                        </div>
+                    </div>
+
+                    <h2>Vehicle Overview</h2>
+                    <p>The Gostwyck GT is a ground-up electric conversion of a 1997 BMW Z3 roadster (E36/7 platform) imported from Japan in Montreal Blue. The conversion features a unique Lexus IS300h L210 transaxle system mounted in the transmission tunnel, controlled via OpenInverter ZombieVerter open-source software.</p>
+
+                    <h3>Build History</h3>
+                    <div class="spec-table">
+                        <table>
+                            <tr>
+                                <th>Version</th>
+                                <th>Build Date</th>
+                                <th>Key Changes</th>
+                            </tr>
+                            <tr>
+                                <td><strong>v1.0</strong></td>
+                                <td>Current</td>
+                                <td>Initial build with Lexus IS300h L210 transaxle and matched inverter</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Key Features (v1.0)</h3>
+                        <ul>
+                            <li>Lexus IS300h L210 transaxle (dual motor-generator system)</li>
+                            <li>Lexus IS300h matched inverter with ZombieVerter control</li>
+                            <li>1997 BMW Z3 chassis (Montreal Blue, imported from Japan)</li>
+                            <li>Transmission tunnel mounting configuration</li>
+                            <li>OpenInverter/EVBMW ZombieVerter open-source control software</li>
+                            <li>Vauxhall Zafira electric power steering pump</li>
+                            <li>Hella UP38 electric vacuum pump</li>
+                        </ul>
+                    </div>
+
+                    <h2>Base Vehicle Specifications</h2>
+                    <div class="info-box">
+                        <h4>BMW Z3 Donor Vehicle</h4>
+                        <ul>
+                            <li><strong>Model Year:</strong> 1997</li>
+                            <li><strong>Origin:</strong> Imported from Japan</li>
+                            <li><strong>Color:</strong> Montreal Blue</li>
+                            <li><strong>Platform:</strong> BMW E36/7</li>
+                            <li><strong>Body Style:</strong> 2-seat roadster</li>
+                            <li><strong>Chassis:</strong> Retained for EV conversion</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="specifications" class="manual-section">
+                    <h2>Technical Specifications</h2>
+
+                    <div class="spec-table">
+                        <table>
+                            <tr>
+                                <th colspan="2">Powertrain</th>
+                            </tr>
+                            <tr>
+                                <td>Transaxle</td>
+                                <td>Lexus IS300h L210 (dual motor-generator system)</td>
+                            </tr>
+                            <tr>
+                                <td>Motor Type</td>
+                                <td>2× Permanent Magnet Synchronous Motors (MG1 + MG2)</td>
+                            </tr>
+                            <tr>
+                                <td>Combined Peak Power</td>
+                                <td>~105 kW (141 hp)</td>
+                            </tr>
+                            <tr>
+                                <td>Configuration</td>
+                                <td>eCVT (electronic continuously variable transmission)</td>
+                            </tr>
+                            <tr>
+                                <td>Mounting</td>
+                                <td>Transmission tunnel (replacing original gearbox)</td>
+                            </tr>
+                            <tr>
+                                <td>Inverter</td>
+                                <td>Lexus IS300h G9200-30132 (Gen 3)</td>
+                            </tr>
+                            <tr>
+                                <td>Controller</td>
+                                <td>OpenInverter/EVBMW ZombieVerter</td>
+                            </tr>
+                            <tr>
+                                <td>System Voltage</td>
+                                <td>280-400V DC (EV conversion typical)</td>
+                            </tr>
+                        </table>
+
+                        <table>
+                            <tr>
+                                <th colspan="2">Battery System</th>
+                            </tr>
+                            <tr>
+                                <td>Chemistry</td>
+                                <td>Lithium-ion (NMC)</td>
+                            </tr>
+                            <tr>
+                                <td>Nominal Voltage</td>
+                                <td>TBD V</td>
+                            </tr>
+                            <tr>
+                                <td>Capacity</td>
+                                <td>TBD kWh</td>
+                            </tr>
+                            <tr>
+                                <td>Configuration</td>
+                                <td>TBD</td>
+                            </tr>
+                        </table>
+
+                        <table>
+                            <tr>
+                                <th colspan="2">Auxiliary Systems</th>
+                            </tr>
+                            <tr>
+                                <td>Power Steering</td>
+                                <td>Vauxhall Zafira electric pump</td>
+                            </tr>
+                            <tr>
+                                <td>Brake Vacuum</td>
+                                <td>Hella UP38 electric pump</td>
+                            </tr>
+                        </table>
+
+                        <table>
+                            <tr>
+                                <th colspan="2">Performance</th>
+                            </tr>
+                            <tr>
+                                <td>0-60 mph</td>
+                                <td>TBD seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed</td>
+                                <td>TBD mph</td>
+                            </tr>
+                            <tr>
+                                <td>Range</td>
+                                <td>TBD miles (estimated)</td>
+                            </tr>
+                        </table>
+
+                        <table>
+                            <tr>
+                                <th colspan="2">Base Vehicle</th>
+                            </tr>
+                            <tr>
+                                <td>Model</td>
+                                <td>1997 BMW Z3 (E36/7)</td>
+                            </tr>
+                            <tr>
+                                <td>Origin</td>
+                                <td>Imported from Japan</td>
+                            </tr>
+                            <tr>
+                                <td>Color</td>
+                                <td>Montreal Blue</td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="powertrain" class="manual-section">
+                    <h2>Powertrain System</h2>
+
+                    <h3>Lexus IS300h L210 Transaxle</h3>
+                    <p>The GT uses the Lexus IS300h L210 transaxle, a compact hybrid eCVT (electronically controlled continuously variable transmission) unit. Unlike traditional use in a hybrid vehicle, this system is repurposed as a pure electric drive, with both motor-generators (MG1 and MG2) used for traction.</p>
+
+                    <div class="info-box">
+                        <h4>L210 Transaxle Specifications</h4>
+                        <ul>
+                            <li><strong>Source:</strong> Lexus IS300h / GS300h / RC300h / Toyota Crown Hybrid</li>
+                            <li><strong>Type:</strong> Dual permanent magnet synchronous motor system</li>
+                            <li><strong>MG1 (Motor-Generator 1):</strong> Smaller motor, 2.6:1 ratio to output shaft</li>
+                            <li><strong>MG2 (Motor-Generator 2):</strong> Larger traction motor, 3.333:1 ratio to output shaft</li>
+                            <li><strong>Combined Peak Power:</strong> 105 kW (141 hp)</li>
+                            <li><strong>Combined Torque:</strong> 300 Nm</li>
+                            <li><strong>System Type:</strong> eCVT with planetary gear set</li>
+                            <li><strong>EV Conversion Method:</strong> ICE input shaft locked stationary (plate/bar)</li>
+                            <li><strong>Mounting:</strong> Transmission tunnel, replacing original BMW gearbox</li>
+                            <li><strong>Drive Configuration:</strong> Direct drive to BMW differential</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>L210 Operating Principle in GT Application</h4>
+                        <p>In the Gostwyck GT, the L210 transaxle is used differently from its OEM hybrid application:</p>
+                        <ul>
+                            <li>Both MG1 and MG2 can be used for propulsion (not just MG2)</li>
+                            <li>No internal combustion engine connection</li>
+                            <li>eCVT functionality provides smooth power delivery</li>
+                            <li>Planetary gear set allows variable drive ratios</li>
+                            <li>System treated as "two big electric motors in a gearbox"</li>
+                        </ul>
+                    </div>
+
+                    <div class="diagram-placeholder">
+                        <p>[Diagram: L210 transaxle mounting in transmission tunnel]</p>
+                        <p>Shows planetary gear set, MG1, MG2, and output to differential</p>
+                    </div>
+
+                    <h3>Inverter System</h3>
+                    <p>The L210 transaxle uses its matched Lexus IS300h inverter, controlled by the OpenInverter/EVBMW ZombieVerter open-source control system.</p>
+
+                    <div class="info-box">
+                        <h4>Inverter System Components</h4>
+                        <ul>
+                            <li><strong>Main Inverter:</strong> Lexus IS300h G9200-30132 (Gen 3, matched to L210)</li>
+                            <li><strong>Controller:</strong> OpenInverter/EVBMW ZombieVerter</li>
+                            <li><strong>Dual Motor Control:</strong> Independent control of MG1 and MG2</li>
+                            <li><strong>OEM System Voltage:</strong> 650V DC (NiMH battery)</li>
+                            <li><strong>EV Conversion Voltage:</strong> 280-400V DC typical (boost stage bypassed)</li>
+                            <li><strong>Cooling:</strong> Integrated liquid cooling system</li>
+                            <li><strong>Communication:</strong> 140 byte MYH package protocol</li>
+                            <li><strong>Features:</strong>
+                                <ul>
+                                    <li>Field-oriented control (FOC) for both motors</li>
+                                    <li>Regenerative braking via both motor-generators</li>
+                                    <li>Configurable power and torque curves</li>
+                                    <li>CAN bus communication</li>
+                                    <li>Open-source ZombieVerter firmware</li>
+                                    <li>GitHub-hosted IS300h inverter control board design</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h3>Transmission Tunnel Mounting</h3>
+                    <p>The L210 transaxle is mounted in the BMW Z3 transmission tunnel in place of the original gearbox. This requires custom mounting and fabrication work but provides a compact, integrated powertrain solution with the output shaft connecting directly to the BMW differential.</p>
+
+                    <div class="info-box">
+                        <h4>Mounting Advantages</h4>
+                        <ul>
+                            <li>Low center of gravity (maintains Z3 handling characteristics)</li>
+                            <li>Compact packaging (transaxle + differential in original drivetrain location)</li>
+                            <li>Retains original BMW rear subframe and differential</li>
+                            <li>Balanced weight distribution</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="battery" class="manual-section">
+                    <h2>Battery System</h2>
+
+                    <h3>Battery Pack Construction</h3>
+                    <p>The GT features a larger battery pack designed for extended range touring. The pack is housed in a custom-built enclosure and uses a modular design for serviceability.</p>
+
+                    <div class="diagram-placeholder">
+                        <p>[Diagram: Battery pack layout and mounting]</p>
+                    </div>
+
+                    <h3>Battery Management System (BMS)</h3>
+                    <p>The BMS monitors individual cell voltages, temperatures, and overall pack health, with advanced algorithms for maximizing range and longevity.</p>
+
+                    <div class="warning-box">
+                        <strong>Warning:</strong> Never attempt to service the battery pack without proper training. High voltage can cause serious injury or death.
+                    </div>
+                </section>
+
+                <section id="electrical" class="manual-section">
+                    <h2>Electrical System</h2>
+
+                    <h3>High Voltage System</h3>
+                    <p>The high voltage (HV) system consists of the battery pack, inverter, motor, and associated cabling and safety systems.</p>
+
+                    <div class="diagram-placeholder">
+                        <p>[Diagram: High voltage electrical schematic]</p>
+                    </div>
+
+                    <h3>12V Auxiliary System</h3>
+                    <p>The 12V system powers vehicle accessories and control electronics. A DC-DC converter steps down from the HV battery to maintain the 12V battery.</p>
+
+                    <div class="diagram-placeholder">
+                        <p>[Diagram: 12V system layout]</p>
+                    </div>
+                </section>
+
+                <section id="charging" class="manual-section">
+                    <h2>Charging System</h2>
+
+                    <h3>Onboard Charger</h3>
+                    <p>The GT is equipped with a high-power onboard AC charger for faster charging at home and on the road.</p>
+
+                    <div class="spec-table">
+                        <table>
+                            <tr>
+                                <th colspan="2">Charging Specifications</th>
+                            </tr>
+                            <tr>
+                                <td>AC Charging Power</td>
+                                <td>TBD kW</td>
+                            </tr>
+                            <tr>
+                                <td>Charge Time (0-100%)</td>
+                                <td>TBD hours @ TBD kW</td>
+                            </tr>
+                            <tr>
+                                <td>Connector Type</td>
+                                <td>Type 2 (Mennekes)</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <h3>Charging Procedure</h3>
+                    <ol>
+                        <li>Park vehicle and switch off</li>
+                        <li>Open charge port</li>
+                        <li>Connect charging cable</li>
+                        <li>Charging will begin automatically</li>
+                        <li>LED indicator shows charging status</li>
+                    </ol>
+                </section>
+
+                <section id="controls" class="manual-section">
+                    <h2>Controls & Software</h2>
+
+                    <h3>Control System</h3>
+                    <p>The GT uses open-source control software for motor control and vehicle systems.</p>
+
+                    <h3>Web Interface</h3>
+                    <p>The inverter can be configured via WiFi using a web-based interface for parameter adjustment and monitoring.</p>
+
+                    <div class="info-box">
+                        <h4>Accessing the Web Interface</h4>
+                        <ol>
+                            <li>Connect to the inverter's WiFi network</li>
+                            <li>Navigate to 192.168.4.1 in a web browser</li>
+                            <li>View parameters and make adjustments</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section id="maintenance" class="manual-section">
+                    <h2>Maintenance</h2>
+
+                    <h3>Regular Maintenance Schedule</h3>
+
+                    <div class="spec-table">
+                        <table>
+                            <tr>
+                                <th>Interval</th>
+                                <th>Service Required</th>
+                            </tr>
+                            <tr>
+                                <td>Monthly</td>
+                                <td>Visual inspection of HV cables and connections</td>
+                            </tr>
+                            <tr>
+                                <td>6 Months</td>
+                                <td>12V battery check, tire pressure, coolant level</td>
+                            </tr>
+                            <tr>
+                                <td>Annual</td>
+                                <td>Full system inspection, software updates</td>
+                            </tr>
+                            <tr>
+                                <td>2 Years</td>
+                                <td>Brake fluid replacement, suspension check</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <h3>DIY Maintenance Items</h3>
+                    <ul>
+                        <li>12V battery check and replacement</li>
+                        <li>Tire rotation and pressure checks</li>
+                        <li>Wiper blade replacement</li>
+                        <li>Cabin air filter replacement</li>
+                    </ul>
+
+                    <div class="warning-box">
+                        <strong>Warning:</strong> High voltage system maintenance should only be performed by qualified technicians.
+                    </div>
+                </section>
+
+                <section id="troubleshooting" class="manual-section">
+                    <h2>Troubleshooting</h2>
+
+                    <h3>Common Issues</h3>
+
+                    <div class="troubleshooting-item">
+                        <h4>Vehicle Won't Start</h4>
+                        <ul>
+                            <li>Check 12V battery voltage</li>
+                            <li>Verify HV battery state of charge</li>
+                            <li>Check main contactor operation</li>
+                            <li>Inspect HV fuses</li>
+                        </ul>
+                    </div>
+
+                    <div class="troubleshooting-item">
+                        <h4>Reduced Power</h4>
+                        <ul>
+                            <li>Check for thermal limiting (motor or inverter overheating)</li>
+                            <li>Verify battery state of charge</li>
+                            <li>Check for error codes via web interface</li>
+                        </ul>
+                    </div>
+
+                    <div class="troubleshooting-item">
+                        <h4>Charging Issues</h4>
+                        <ul>
+                            <li>Verify power at charging point</li>
+                            <li>Check charging cable connections</li>
+                            <li>Inspect onboard charger status</li>
+                            <li>Review BMS error logs</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="diagrams" class="manual-section">
+                    <h2>System Diagrams</h2>
+
+                    <h3>High Voltage System Diagram</h3>
+                    <div class="diagram-placeholder large">
+                        <p>[Full system electrical diagram - high voltage]</p>
+                        <p>Battery Pack → Main Fuse → Contactor → Inverter → Motor</p>
+                        <p>Includes: Pre-charge circuit, HV interlock loop, safety systems</p>
+                    </div>
+
+                    <h3>12V System Diagram</h3>
+                    <div class="diagram-placeholder large">
+                        <p>[12V electrical system diagram]</p>
+                        <p>Shows: DC-DC converter, 12V battery, fuse box, lighting, accessories</p>
+                    </div>
+
+                    <h3>Cooling System Diagram</h3>
+                    <div class="diagram-placeholder">
+                        <p>[Thermal management system diagram]</p>
+                        <p>Motor cooling, inverter cooling, battery thermal management</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2025 Gostwyck. Crafting electric dreams with vintage soul.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // Sidebar navigation active state
+        const navLinks = document.querySelectorAll('.manual-nav a');
+        const sections = document.querySelectorAll('.manual-section');
+
+        // Update active link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Version selector
+        document.getElementById('version-selector').addEventListener('change', function(e) {
+            // In a real implementation, this would load different content
+            console.log('Selected version:', e.target.value);
+            // For now, just update the badge
+            document.querySelector('.version-badge').textContent = 'Revision ' + e.target.value;
+        });
+
+        // Smooth scroll for navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
