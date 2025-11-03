@@ -82,7 +82,7 @@ nav ul li a:hover {
     height: 80vh;
     display: flex;
     align-items: center;
-    background-image: url('assets/gostwyck_spyder_onroad.png');
+    background-image: url('assets/gostwyck_spyder.png');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -165,7 +165,7 @@ nav ul li a:hover {
 }
 
 .spyder-img {
-    background-image: url('assets/gostwyck-spyder.png');
+    background-image: url('assets/gostwyck_spyder.png');
 }
 
 .gt-img {
